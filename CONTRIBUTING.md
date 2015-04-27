@@ -45,6 +45,17 @@ performance reasons).
 Therefore, to test changes with your app, run `rake install` to properly
 install the gem on your system.
 
+After `rake install` you'll need to run
+`gem install /path/to/local/spring-version.gem` to install the gem for your
+application. You don't need to restart spring to get this working, reinstalling
+the gem takes care of this.
+
+If your `Gemfile.lock` is requiring a version of spring that is different than
+your local version (for example: `Gemfile.lock` specifies spring 1.3.3
+but the local copy is spring 1.3.4) you'll need to update the
+`Gemfile.lock` with `bundle update spring` first, then install the gem
+via the path to the gem you built with `rake install`.
+
 ## Submitting a pull request
 
 If your change is a bugfix or feature, please make sure you add to
